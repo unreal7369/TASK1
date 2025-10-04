@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class demo
+ {
+    public static void main(String[] args)
+     {
+ 
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter number of tasks: ");
+        int n = sc.nextInt();
+        sc.nextLine(); 
+
+        for (int i = 0; i < n; i++) {
+        
+            System.out.print("\nEnter task name: ");
+            String taskName = sc.nextLine();
+
+          
+            System.out.print("Enter number of subtasks for \"" + taskName + "\": ");
+            int count = sc.nextInt();
+            sc.nextLine();
+     
+            String tag;
+            if (count == 0) {
+                tag = "single";
+            } else {
+                tag = "multi";
+
+                
+                System.out.println("Enter " + count + " subtask(s):");
+                for (int j = 0; j < count; j++) {
+                    String subtask = sc.nextLine();
+                }
+            }
+
+          
+            System.out.println("Task: " + taskName);
+            System.out.println("Tag: " + tag);
+            System.out.println("-------------------");
+            if (count > 0) {
+                System.out.print("Do you want to remove subtasks for \"" + taskName + "\"? (yes/no): ");
+                String choice = sc.nextLine();
+                if (choice.equalsIgnoreCase("yes")) {
+                    count = 0;
+                    System.out.println("Task: " + taskName);
+                   
+                }
+            }
+
+        }
+
+        sc.close();
+    }
+}
+
+         
+
+
+
+    
